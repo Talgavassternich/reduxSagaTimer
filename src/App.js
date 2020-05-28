@@ -12,15 +12,14 @@ function millisToMinutesAndSeconds(millis) {
 
 const App = ({active, value, onReset, onStart, onPause}) => (
 
-    <div>
+    <div className={"container"}>
         <h1>Timer</h1>
         <div>
-            <span>{millisToMinutesAndSeconds(value)}</span>
+            <div className={"timer"}>{millisToMinutesAndSeconds(value)}</div>
             <div>
-                <br/>
                 <button onClick={onStart} disabled={active}>Start</button>
-                <button onClick={onPause} disabled={!active}>Stop</button>
-                <button onClick={onReset}>Reset</button>
+                <button className={"btn-stop"} onClick={onPause} disabled={!active}>Stop</button>
+                <button className={"btn-reset"} onClick={onReset}>Reset</button>
             </div>
         </div>
     </div>
